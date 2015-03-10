@@ -1,0 +1,27 @@
+﻿<Window x:Class="CefSharp.MinimalExample.Wpf.jacodvStart"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        xmlns:cefSharp1="clr-namespace:CefSharp;assembly=CefSharp.Core"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        WindowState="Maximized"
+        Title="jacodvStart"
+        >
+  <Window.Resources>
+    <system:Boolean x:Key="BooleanIsTrue">true</system:Boolean>
+  </Window.Resources>
+    <DockPanel>
+    <cefSharp:ChromiumWebBrowser
+      Address="{Binding Source, Mode=OneTime}"
+      Title="{Binding Title,Mode=OneTime}"
+      AllowDrop="False"
+      DockPanel.Dock="Left" Width="800">
+      <cefSharp:ChromiumWebBrowser.BrowserSettings>
+        <cefSharp1:BrowserSettings FileAccessFromFileUrlsAllowed="{StaticResource BooleanIsTrue}" UniversalAccessFromFileUrlsAllowed="{StaticResource BooleanIsTrue}" />
+      </cefSharp:ChromiumWebBrowser.BrowserSettings>
+    </cefSharp:ChromiumWebBrowser>
+    <WebBrowser Name="WebBrowserCtl" DockPanel.Dock="Right"  Width="800">
+        
+      </WebBrowser>
+  </DockPanel>
+</Window>

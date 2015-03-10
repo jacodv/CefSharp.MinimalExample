@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>Sample</title>
+	</head>
+	<body>
+		<p>Dear <span id="personName"/></p>
+	  <ol id="attachedFiles"></ol>        
+    
+	  <p><a id="contactAddress">Please contact</a></p>
+	  <br/>
+		<script src="jquery-1.9.1.min.js"></script>
+		<script src="processedData.js"></script>
+		<script>
+			function applyData(){
+				$("#personName").text(processedData.name);
+				for(var i=0;i<processedData.files.length;i++){
+					var name = processedData.files[i].name;
+					var file = processedData.files[i].file;
+					$("#attachedFiles").append("<li><a href='" + file + "'>" + name + "</a></li>");
+
+					$("#contactAddress").attr("href", "mailto://" + processedData.contactAddress);
+				}
+			}
+			
+			$(document).ready(function (){
+					applyData();
+			});
+		</script>
+	</body>
+</html>
