@@ -10,18 +10,17 @@
   <Window.Resources>
     <system:Boolean x:Key="BooleanIsTrue">true</system:Boolean>
   </Window.Resources>
-    <DockPanel>
+    <Grid>
     <cefSharp:ChromiumWebBrowser
+      x:Name="ChromiumWebBrowser"
       Address="{Binding Source, Mode=OneTime}"
       Title="{Binding Title,Mode=OneTime}"
-      AllowDrop="False"
-      DockPanel.Dock="Left" Width="800">
+      AllowDrop="False">
       <cefSharp:ChromiumWebBrowser.BrowserSettings>
-        <cefSharp1:BrowserSettings FileAccessFromFileUrlsAllowed="{StaticResource BooleanIsTrue}" UniversalAccessFromFileUrlsAllowed="{StaticResource BooleanIsTrue}" />
+        <cefSharp1:BrowserSettings 
+          FileAccessFromFileUrlsAllowed="{StaticResource BooleanIsTrue}" 
+          UniversalAccessFromFileUrlsAllowed="{StaticResource BooleanIsTrue}" />
       </cefSharp:ChromiumWebBrowser.BrowserSettings>
     </cefSharp:ChromiumWebBrowser>
-    <WebBrowser Name="WebBrowserCtl" DockPanel.Dock="Right"  Width="800">
-        
-      </WebBrowser>
-  </DockPanel>
+  </Grid>
 </Window>

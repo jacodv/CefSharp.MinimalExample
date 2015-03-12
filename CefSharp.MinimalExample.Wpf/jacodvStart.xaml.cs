@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows;
+using CefSharp.MinimalExample.Wpf.Handlers;
 using CefSharp.MinimalExample.Wpf.ViewModels;
 
 namespace CefSharp.MinimalExample.Wpf
@@ -21,8 +22,12 @@ namespace CefSharp.MinimalExample.Wpf
         Title = "Sample Page",
         Source = path
       };
+      ChromiumWebBrowser.FrameLoadEnd += ChromiumWebBrowser_FrameLoadEnd;
+    }
 
-      WebBrowserCtl.Source = new Uri(path);
+    void ChromiumWebBrowser_FrameLoadEnd(object sender, FrameLoadEndEventArgs e)
+    {
+      ChromiumWebBrowser.ResourceHandler = new LocalResourceHandler();
     }
   }
 }

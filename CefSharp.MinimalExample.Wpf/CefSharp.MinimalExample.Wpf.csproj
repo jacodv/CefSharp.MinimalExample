@@ -78,6 +78,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Handlers\LocalResourceHandler.cs" />
     <Compile Include="jacodvStart.xaml.cs">
       <DependentUpon>jacodvStart.xaml</DependentUpon>
     </Compile>
