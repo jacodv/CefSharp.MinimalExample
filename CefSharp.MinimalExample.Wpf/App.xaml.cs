@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Reflection;
 using System.Windows;
 
 namespace CefSharp.MinimalExample.Wpf

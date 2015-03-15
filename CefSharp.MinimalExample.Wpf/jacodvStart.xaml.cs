@@ -27,7 +27,8 @@ namespace CefSharp.MinimalExample.Wpf
 
     void ChromiumWebBrowser_FrameLoadEnd(object sender, FrameLoadEndEventArgs e)
     {
-      ChromiumWebBrowser.ResourceHandler = new LocalResourceHandler();
+      //ChromiumWebBrowser.ResourceHandler = new LocalResourceHandler();
+      ChromiumWebBrowser.RequestHandler=new LocalRequestHandler();
     }
   }
 }
